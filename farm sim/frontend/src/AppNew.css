@@ -1,0 +1,282 @@
+/* Modern Farm Simulator Styling */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #4caf50;
+  --primary-dark: #388e3c;
+  --primary-light: #c8e6c9;
+  --secondary-color: #ff9800;
+  --text-color: #333;
+  --background-color: #f9f9f9;
+  --card-bg: #ffffff;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header Styling */
+.app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.app-header h1 {
+  color: var(--primary-dark);
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Connection Status */
+.connection-status {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  background-color: #f0f0f0;
+  transition: var(--transition);
+}
+
+.connection-status.connected {
+  background-color: #e8f5e9;
+  border-left: 4px solid #4caf50;
+}
+
+.connection-status.disconnected {
+  background-color: #ffebee;
+  border-left: 4px solid #f44336;
+}
+
+.connection-status.error {
+  background-color: #ffebee;
+  border-left: 4px solid #f44336;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+
+.debug-info {
+  color: #0288d1;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  background-color: #e1f5fe;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.reconnect-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.reconnect-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Dashboard Styling */
+.farm-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.dashboard-section {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.dashboard-section h2 {
+  color: var(--primary-dark);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 8px;
+}
+
+/* Resources Panel */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.resource-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.resource-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.resource-icon {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.resource-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.resource-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Weather Panel */
+.weather-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.weather-icon {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.weather-label {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.day-counter {
+  align-self: center;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Main Content */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.left-panel,
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Achievements Panel */
+.achievements-panel {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.achievements-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff3e0;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.achievement-icon {
+  font-size: 1.5rem;
+}
+
+.achievement-name {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .farm-dashboard,
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .resources-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header h1 {
+    font-size: 2rem;
+  }
+}
